@@ -1,24 +1,16 @@
 public class Main {
+    
     public static void main(String[] args){
-        
-        Musica spotify = new Musica();
-        Web safari = new Web();
-        Telefone telefone = new Telefone();
+        Cliente lucas = new Cliente();
+        lucas.setNome("Lucas");
 
-        String youtube = "https://youtube.com";
-        String numero = "998641370";
-        String musica = "Appetite";
+        Conta cc = new ContaCorrente(lucas);
+        Conta cp = new ContaPoupanca(lucas);
 
-        safari.adicionarNovaAba();
-        safari.atualizarAba();
-        safari.exibirPagina(youtube);
+        cc.depositar(200);
+        cc.transferir(100, cp);
 
-        spotify.selecionarMusica(musica);
-        spotify.tocar();
-        spotify.pausar();
-
-        telefone.ligar(numero);
-        telefone.iniciarCorreioDeVoz();
-        telefone.atender();
+        cc.imprimirExtrato();
+        cp.imprimirExtrato();
     }
 }
